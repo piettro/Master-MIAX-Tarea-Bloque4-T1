@@ -163,11 +163,3 @@ Generated deliverables (`outputs/`):
 ## Architecture
 
 See [docs/architecture.md](docs/architecture.md) for diagrams.
-
-## References
-
-- Professor's solution: `professor_solution/`. This folder is currently
-  empty. The reference used was the professor's in-class notebook
-  `lectura_datos/Lectura_datos_ejemplo_Adult_Data_B4_T1_clase.ipynb`
-  (a local, git-ignored copy).
-- Assignment materials: `materials/` (brief, lecture transcripts).
