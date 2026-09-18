@@ -1,0 +1,3 @@
+predicted_label,count,expected_abs_error_mean,expected_abs_error_median,mc_variance_mean,mc_variance_median
+Bad payer,10477,0.5830588,0.5875938,0.0012863204,0.001161322
+Good payer,20274,0.33765438,0.34358627,0.0013424102,0.0012642147

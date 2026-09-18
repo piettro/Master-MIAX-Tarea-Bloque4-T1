@@ -1,0 +1,190 @@
+{
+  "config": {
+    "seed": 42,
+    "output_dir": "C:\\Users\\piett\\OneDrive\\Desktop\\Pietro\\Master MIAX\\Clases\\4.Inteligencia Artificial Avanzada\\Taller\\miax-b4t1\\outputs",
+    "deterministic_ops": true,
+    "data": {
+      "csv_path": "C:\\Users\\piett\\OneDrive\\Desktop\\Pietro\\Master MIAX\\Clases\\4.Inteligencia Artificial Avanzada\\Taller\\miax-b4t1\\data\\application_train.csv",
+      "zip_path": "C:\\Users\\piett\\OneDrive\\Desktop\\Pietro\\Master MIAX\\Clases\\4.Inteligencia Artificial Avanzada\\Taller\\miax-b4t1\\data\\application_train.zip",
+      "val_size": 0.1,
+      "test_size": 0.1,
+      "sample_size": null
+    },
+    "topology": {
+      "hidden_units": [
+        64,
+        32
+      ],
+      "dropout_rates": [
+        0.2,
+        0.2
+      ],
+      "activation": "relu",
+      "learning_rate": 0.001
+    },
+    "debt_ratio": {
+      "ratio_caps": [
+        0.5,
+        10.0
+      ],
+      "exponent_bounds": [
+        0.1,
+        3.0
+      ],
+      "log_ratio_clip": 20.0
+    },
+    "training": {
+      "epochs": 40,
+      "batch_size": 512,
+      "patience": 6
+    },
+    "fairness": {
+      "lambdas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        10.0,
+        25.0,
+        50.0
+      ],
+      "penalty": "squared",
+      "corr_threshold": 0.05,
+      "decision_threshold": 0.5
+    },
+    "tuner": {
+      "max_trials": 20,
+      "epochs": 15,
+      "patience": 3,
+      "max_hidden_layers": 3,
+      "units_choices": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "activations": [
+        "relu",
+        "elu",
+        "tanh"
+      ],
+      "dropout_range": [
+        0.1,
+        0.4,
+        0.1
+      ],
+      "learning_rates": [
+        0.01,
+        0.001,
+        0.0005
+      ],
+      "lambda_range": [
+        0.1,
+        50.0
+      ],
+      "fairness_weight": 1.0,
+      "directory": "C:\\Users\\piett\\AppData\\Local\\Temp\\b4t1_keras_tuner"
+    },
+    "uncertainty": {
+      "hidden_units": [
+        32,
+        16
+      ],
+      "learning_rate": 0.001,
+      "use_prediction_feature": true,
+      "mc_samples": 50
+    }
+  },
+  "best_fair": {
+    "source": "sweep",
+    "lambda": 0.5,
+    "topology": {
+      "hidden_units": [
+        64,
+        32
+      ],
+      "dropout_rates": [
+        0.2,
+        0.2
+      ],
+      "activation": "relu",
+      "learning_rate": 0.001
+    },
+    "val_roc_auc": 0.7437679517734889,
+    "val_fair_corr": 0.020634794059172956
+  },
+  "epochs": {
+    "base": 35,
+    "fair": 34,
+    "error_model": 40
+  },
+  "test_metrics": {
+    "Base (lambda=0)": {
+      "accuracy": 0.6814737732106273,
+      "balanced_accuracy": 0.6766191337971574,
+      "roc_auc": 0.7390521671489819,
+      "pr_auc": 0.21856630399466045,
+      "fair_corr": 0.2494700822650225,
+      "fair_spearman": 0.2501944429323547,
+      "dpd": 0.2052433835504407,
+      "eod": 0.17336335664931268
+    },
+    "Best FAIR (lambda=0.5)": {
+      "accuracy": 0.6857012780072193,
+      "balanced_accuracy": 0.6756107342635984,
+      "roc_auc": 0.734785485386181,
+      "pr_auc": 0.21654461352249094,
+      "fair_corr": 0.032180868584380545,
+      "fair_spearman": 0.029678246260399783,
+      "dpd": 0.04924445515843179,
+      "eod": 0.025715449231850207
+    }
+  },
+  "uncertainty_by_class": {
+    "Bad payer": {
+      "count": 10477,
+      "expected_abs_error_mean": 0.583058774471283,
+      "expected_abs_error_median": 0.5875937938690186,
+      "mc_variance_mean": 0.0012863203883171082,
+      "mc_variance_median": 0.001161321997642517
+    },
+    "Good payer": {
+      "count": 20274,
+      "expected_abs_error_mean": 0.33765438199043274,
+      "expected_abs_error_median": 0.343586266040802,
+      "mc_variance_mean": 0.0013424102216959,
+      "mc_variance_median": 0.0012642147485166788
+    }
+  },
+  "uncertainty_by_missing": {
+    "0": {
+      "count": 10949,
+      "expected_abs_error_mean": 0.3931323289871216,
+      "expected_abs_error_median": 0.39359772205352783,
+      "mc_variance_mean": 0.0014003547839820385,
+      "mc_variance_median": 0.0013294117525219917
+    },
+    "1": {
+      "count": 16130,
+      "expected_abs_error_mean": 0.4239043593406677,
+      "expected_abs_error_median": 0.42370566725730896,
+      "mc_variance_mean": 0.0012798530515283346,
+      "mc_variance_median": 0.001185119617730379
+    },
+    "2": {
+      "count": 3654,
+      "expected_abs_error_mean": 0.4933403432369232,
+      "expected_abs_error_median": 0.5072799921035767,
+      "mc_variance_mean": 0.0012818296672776341,
+      "mc_variance_median": 0.0011361364740878344
+    },
+    "3": {
+      "count": 18,
+      "expected_abs_error_mean": 0.536845862865448,
+      "expected_abs_error_median": 0.5329380631446838,
+      "mc_variance_mean": 0.00180472107604146,
+      "mc_variance_median": 0.0014527582097798586
+    }
+  }
+}

@@ -1,21 +1,22 @@
-# Taller B4-T1 - Diseño de Redes Confiables (Justicia e Incertidumbre)
-# Entorno verificado con Python 3.10
+# B4-T1 Trustworthy Neural Networks (Fairness & Uncertainty)
+# Verified with Python 3.10 on Windows (CPU).
 
-# Núcleo de datos / ML clásico
+# Data / classical ML
 numpy==2.2.6
 pandas==2.3.3
 scikit-learn==1.7.2
 scipy==1.15.3
 matplotlib==3.10.9
 
-# Deep Learning (Keras 3 sobre TensorFlow) + AutoML
+# Deep learning (Keras 3 on TensorFlow) + AutoML
 tensorflow==2.21.0
 keras==3.12.2
 keras-tuner==1.4.8
-tensorboard==2.20.0   # requerido por keras-tuner (engine de trials)
+tensorboard==2.20.0
 
-# Ejecución de notebooks (Run All / nbconvert)
-nbformat==5.10.4
-nbconvert==7.17.1
+# Tests and linting
+pytest==9.1.1
+flake8==7.3.0
+
+# Optional: run the exploration notebook
 ipykernel==7.3.0
-notebook>=7,<8

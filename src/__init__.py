@@ -1,1 +1,1 @@
-"""Paquete src del Taller B4-T1."""
+"""B4-T1: trustworthy neural networks (fairness and uncertainty)."""
